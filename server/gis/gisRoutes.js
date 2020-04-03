@@ -1,5 +1,6 @@
 const express =  require('express')
 const pointValidator = require('./validators/testpointValidator')
+const addPolygonValidator = require('./validators/addPolygonValidator')
 const router = express.Router()
 
 router.get('/testpoint',
@@ -11,7 +12,9 @@ router.get('/testpoint',
         )
 
 router.put('/addpolygon',
-        (req , res) =>{
+        addPolygonValidator.validatorRules(),
+        addPolygonValidator.validate,
+        (req , res) => {
             res.send("OK");
         })
 

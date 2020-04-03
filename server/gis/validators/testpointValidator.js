@@ -3,10 +3,8 @@ const validatorRules = () => {
 
     return [
     //validate latitude query parameter
-    
     query('lat','Invalid lat query parameter').notEmpty(),
     
-
     //validate long query parameter
     query('long','Invalid long query parameter').notEmpty()
     ]
@@ -21,7 +19,7 @@ const validate = (req, res, next) => {
     const extractedErrors = []
     errors.array().map(err => extractedErrors.push({ [err.param]: err.msg }))
   
-    return res.status(422).json({
+    return res.status(400).json({
       errors: extractedErrors,
     })
 }
