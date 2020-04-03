@@ -5,10 +5,12 @@ const validatorRules = () => {
     return [
         body().custom(value => {
             if(!geojsonValidation.isFeature(value)){
-                throw new Error( 'is not valid polygon');
+                let err = new Error( 'is not valid Feature')
+                throw err;
             }
             if(!geojsonValidation.isPolygon(value.geometry)){
-                throw new Error('The value must be polygon');
+                let err = new Error( 'is not valid Polygon')
+                throw err;
             }
             return true;
         })
@@ -23,7 +25,7 @@ const validate = (req, res, next) => {
       return next()
     }
     const extractedErrors = []
-    errors.array().map(err => extractedErrors.push({ [err.param]: err.msg }))
+    errors.array().map(err => extractedErrors.push({ 'body' : err.msg }))
   
     return res.status(400).json({
       errors: extractedErrors,
