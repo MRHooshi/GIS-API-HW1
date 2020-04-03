@@ -1,0 +1,22 @@
+{
+  "name": "gis-api-hw1",
+  "version": "1.0.0",
+  "description": "simple api for gis",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MRHooshi/GIS-API-HW1.git"
+  },
+  "author": "MohammadReza Hooshangi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MRHooshi/GIS-API-HW1/issues"
+  },
+  "homepage": "https://github.com/MRHooshi/GIS-API-HW1#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
