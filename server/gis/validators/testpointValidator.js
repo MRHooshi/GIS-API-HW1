@@ -8,7 +8,7 @@ const validatorRules = () => {
     
 
     //validate long query parameter
-    query('long','latitude must exist').exists(),
+    query('long','long must exist').exists(),
     query('long','long must not empty').notEmpty()
     ]
 }
