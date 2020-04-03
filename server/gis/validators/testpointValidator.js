@@ -3,13 +3,12 @@ const validatorRules = () => {
 
     return [
     //validate latitude query parameter
-    query('lat','latitude must exist').exists(),
-    query('lat','latitude must not empty ').notEmpty(),
+    
+    query('lat','Invalid lat query parameter').notEmpty(),
     
 
     //validate long query parameter
-    query('long','long must exist').exists(),
-    query('long','long must not empty').notEmpty()
+    query('long','Invalid long query parameter').notEmpty()
     ]
 }
 

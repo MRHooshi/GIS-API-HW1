@@ -1,5 +1,5 @@
 const express =  require('express')
-const pointValidator = require('./validator/testpointValidator')
+const pointValidator = require('./validators/testpointValidator')
 const router = express.Router()
 
 router.get('/testpoint',
