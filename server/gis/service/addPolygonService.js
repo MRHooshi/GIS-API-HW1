@@ -7,8 +7,14 @@ const addPolygonService = (geojsonObject, err ) =>
             //log 
         )
         .catch(
+            e =>{
+                err = {
+                    statusCode : 500 ,
+                    message : [e.message]
+                }
+            }
             //log the error
-            err => err.push({})
+            
         )
     return DAL.polygonCollection
 }
