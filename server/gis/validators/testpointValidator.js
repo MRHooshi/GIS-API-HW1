@@ -1,4 +1,5 @@
 const {query , validationResult } = require('express-validator')
+const logger = require('../../../logger/logger');
 const validatorRules = () => {
 
     return [
@@ -17,8 +18,11 @@ const validate = (req, res, next) => {
       return next()
     }
     const extractedErrors = []
-    errors.array().map(err => extractedErrors.push({ [err.param]: err.msg }))
-  
+    errors.array().map(err =>
+      {
+        logger.error('validation error : ' + req.path);
+        return extractedErrors.push({ [err.param]: err.msg })
+      })
     return res.status(400).json({
       errors: extractedErrors,
     })
