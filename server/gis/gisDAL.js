@@ -7,7 +7,7 @@ const polygonCollection = () =>{
 }
 
 const filter = (func ,geoPoint) => 
-                polygonCollection.features
+                polygonCollection().features
                 .filter(polygon => func(geoPoint , polygon));                
 
 
