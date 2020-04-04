@@ -1,6 +1,6 @@
 const express =  require('express')
 const pointValidator = require('./validators/testpointValidator')
-const addPolygonValidator = require('./validators/addpolygonValidator')
+const addPolygonValidator = require('./validators/addPolygonValidator')
 const gisController = require('./gisController')
 const router = express.Router()
 
