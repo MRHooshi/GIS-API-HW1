@@ -14,7 +14,7 @@ const filter = (func ,geoPoint) =>
 const addPolygon = (polygon) => {
 
     object.features.push(polygon);
-    return jsonfile.writeFile(path , obj) //it will return Promise
+    return jsonfile.writeFile(path , object) //it will return Promise
 }
 
 module.exports = {

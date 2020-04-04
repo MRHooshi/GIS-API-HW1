@@ -25,7 +25,7 @@ const validate = (req, res, next) => {
       return next()
     }
     const extractedErrors = []
-    errors.array().map(err => extractedErrors.push({ 'body' : err.msg }))
+    errors.array().map(err => extractedErrors.push({ [err.param] : err.msg }))
   
     return res.status(400).json({
       errors: extractedErrors,

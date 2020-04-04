@@ -12,7 +12,7 @@ const addPolygonController = (req , res) => {
         res.send(obj);
     }
     else{
-        res.send(polygonNames);
+        res.send(result);
         
     }
 

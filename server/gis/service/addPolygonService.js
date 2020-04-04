@@ -16,7 +16,7 @@ const addPolygonService = (geojsonObject, err ) =>
             //log the error
             
         )
-    return DAL.polygonCollection
+    return DAL.polygonCollection()
 }
 
 module.exports = addPolygonService
