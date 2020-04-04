@@ -1,19 +1,21 @@
 const DAL = require('../gisDAL');
-
+const logger = require('../../../logger/logger');
 const addPolygonService = (geojsonObject, err ) =>
 {
     DAL.addPolygon(geojsonObject)
         .then( 
-            //log 
+            logger.info("Write complete successfully " + geojsonObject) 
         )
         .catch(
             e =>{
-                err = {
+
+                logger.error('error in writing data ' + e )
+                return err = {
                     statusCode : 500 ,
                     message : [e.message]
                 }
             }
-            //log the error
+            
             
         )
     return DAL.polygonCollection()
