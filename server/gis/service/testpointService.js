@@ -1,7 +1,7 @@
 const turf = require('@turf/turf');
 const DAL = require('../gisDAL');
 
-const testpointService = (cordinations) => {
+const testpointService = (cordinations , err) => {
     
     geojsonPoint = turf.point(cordinations); 
     polygons = DAL.filter(turf.inside , geojsonPoint);
