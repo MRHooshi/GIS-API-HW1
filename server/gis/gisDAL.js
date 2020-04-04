@@ -14,17 +14,11 @@ const filter = (func ,geoPoint) =>
 const addPolygon = (polygon) => {
 
     object.features.push(polygon);
-    jsonfile.writeFile(path , obj)
-    .then(res => {
-        console.log('Write complete')
-      })
-    .catch(error => console.error(error));
-    
-    return object;
-} 
+    return jsonfile.writeFile(path , obj) //it will return Promise
+}
 
 module.exports = {
-    allPolygon,
+    polygonCollection,
     filter,
     addPolygon
 

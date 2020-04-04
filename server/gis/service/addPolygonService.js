@@ -1,9 +1,16 @@
 const DAL = require('../gisDAL');
 
-const addPolygonService = (geojsonObject) =>
+const addPolygonService = (geojsonObject, err ) =>
 {
-    geojsonResult = DAL.addPolygon(geojsonObject)
-    return geojsonResult;
+    DAL.addPolygon(geojsonObject)
+        .then( 
+            //log 
+        )
+        .catch(
+            //log the error
+            err => err.push({})
+        )
+    return DAL.polygonCollection
 }
 
 module.exports = addPolygonService
